@@ -1,3 +1,3 @@
 module.export = {
-    reactStrictMode: true
+  reactStrictMode: true
 }
