@@ -1,7 +1,7 @@
 const Bat = props => {
   return (
     <svg
-      fill="#fff"
+      fill="currentColor"
       width={20}
       height={20}
       version="1.1"
