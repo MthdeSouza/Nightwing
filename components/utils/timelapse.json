@@ -1,0 +1,42 @@
+[
+  {
+    "endDate": "1995",
+    "description": "Born in Americana, São Paulo - Brazil."
+  },
+  {
+    "endDate": "2009",
+    "description": "Completed a Web Design course at Microcamp, beginning my studies in technology with a focus on web design and visual development."
+  },
+  {
+    "endDate": "2012",
+    "description": "Graduated as a Computer Technician at Colégio Politec Americana, developing skills in networking and systems administration, including support and infrastructure."
+  },
+  {
+    "endDate": "2015",
+    "description": "Worked at NW Software as a Developer and Support Analyst. Developed an ERP system in Delphi, created REST APIs, and implemented an inventory management system. Also handled technical support and database maintenance."
+  },
+  {
+    "endDate": "2017",
+    "description": "Earned a Bachelor's degree in Information Security at Fatec Americana, with advanced training in digital security and systems management."
+  },
+  {
+    "endDate": "2017",
+    "description": "Worked at IBM as a Backup Administrator, managing backup solutions to ensure data integrity and service continuity. Developed tools for backup monitoring using Java, Spring Boot, and Angular."
+  },
+  {
+    "endDate": "2020",
+    "description": "Worked at IBM as a Front-end Developer. Focused on front-end development with Angular and React, implementing TDD (Test-Driven Development) and CI/CD pipelines. Leveraged agile methodologies and ensured code quality with unit tests using Jest and Cypress."
+  },
+  {
+    "endDate": "2021",
+    "description": "Completed an MBA in Front-end Development at Instituto de Gestão e Tecnologia da Informação, specializing in modern front-end frameworks and best practices."
+  },
+  {
+    "endDate": "2022",
+    "description": "Worked at Softplan as a Front-end Developer. Involved in requirements analysis, feature implementation, and agile project management. Main technologies used were React, GraphQL, and Design Systems."
+  },
+  {
+    "endDate": "2023",
+    "description": "Worked at Renner as a Front-end Developer. Contributed to a comprehensive e-commerce platform, focusing on product management, payment integration, and responsive UX. Key contributions included custom hooks, Jest unit tests, and component documentation using Storybook."
+  }
+]

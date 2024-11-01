@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import Logo from './logo'
-import Link from 'next/link'
+import { Link as NextLink } from 'next/link'
 import {
   Container,
   Box,
@@ -12,30 +12,34 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Link
 } from '@chakra-ui/react'
 import ThemeToggleButton from './theme-toggle-button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
 
   return (
-    <Link href={href}>
-      <chakraLink
-        p={2}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-      >
-        {children}
-      </chakraLink>
+    <Link
+      as={NextLink}
+      href={href}
+      // scroll={false}
+      p={2}
+      bg={active ? useColorModeValue('#F5F5DC', '#556B2F') : undefined}
+      color={useColorModeValue('#202023', 'whiteAlpha.900')}
+      target={target}
+      scroll
+      {...props}
+    >
+      {children}
     </Link>
   )
 }
 
 const MenuLink = forwardRef((props, ref) => (
-  <Link ref={ref} as={Link} {...props} />
+  <Link ref={ref} as={NextLink} {...props} />
 ))
 
 const NavBar = props => {
@@ -72,14 +76,11 @@ const NavBar = props => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            Works
+          <LinkItem href="/" path={path}>
+            Home
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
-          <LinkItem href="/wallpapers" path={path}>
-            Wallpapers
+          <LinkItem href="/contact" path={path}>
+            Contact
           </LinkItem>
           <LinkItem href="https://github.com/MthdeSouza/Nightwing" path={path}>
             Source
@@ -98,16 +99,13 @@ const NavBar = props => {
               />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
-                  About
+                  Home
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/works">
-                  Works
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/wallpapers">
-                  Wallpapers
+                <MenuItem as={MenuLink} href="/contact">
+                  Contact
                 </MenuItem>
                 <MenuItem
-                  as={Link}
+                  as={NextLink}
                   href="https://github.com/MthdeSouza/Nightwing"
                 >
                   View Source
