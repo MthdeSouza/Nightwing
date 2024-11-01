@@ -1,6 +1,13 @@
 import Head from 'next/head'
 import { Box, Container } from '@chakra-ui/react'
 import NavBar from '../navbar'
+import VoxelBatLoader from '../voxel-bat-loader'
+import dynamic from 'next/dynamic'
+
+const LazyVoxelBat = dynamic(() => import('../voxel-bat'), {
+  ssr: false,
+  loading: () => <VoxelBatLoader />
+})
 
 const Main = ({ children, router }) => {
 
@@ -14,6 +21,8 @@ const Main = ({ children, router }) => {
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
+        <LazyVoxelBat />
+
         {children}
       </Container>
     </Box>
