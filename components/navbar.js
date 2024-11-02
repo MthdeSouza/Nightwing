@@ -104,7 +104,7 @@ const NavBar = props => {
                   Contact
                 </MenuItem>
                 <MenuItem>
-                  <LinkItem href="https://github.com/MthdeSouza/Nightwing" path={path}>
+                  <LinkItem href="https://github.com/MthdeSouza/Nightwing" path={path} p={0}>
                     View Source
                   </LinkItem>
                 </MenuItem>
