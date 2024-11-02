@@ -25,7 +25,6 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     <Link
       as={NextLink}
       href={href}
-      // scroll={false}
       p={2}
       bg={active ? useColorModeValue('#F5F5DC', '#556B2F') : undefined}
       color={useColorModeValue('#202023', 'whiteAlpha.900')}
