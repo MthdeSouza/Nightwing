@@ -96,10 +96,10 @@ const Page = () => {
           <List mt={4}>
             <ListItem display="flex" flexDir="column">
               <Link href="https://github.com/MthdeSouza" target="_blank">
-                <Button varitn="ghost" color={useColorModeValue('#F5F5DC', '#556B2F')} bg="none" leftIcon={<Icon as={IoLogoGithub} />} >@MthDeSouza</Button>
+                <Button varitn="ghost" color={useColorModeValue('#1A202C', '#556B2F')} bg="none" leftIcon={<Icon as={IoLogoGithub} />} >@MthDeSouza</Button>
               </Link>
               <Link href="https://www.linkedin.com/in/matheusdsouza/" target="_blank">
-                <Button varitn="ghost" color={useColorModeValue('#F5F5DC', '#556B2F')} bg="none" leftIcon={<Icon as={IoLogoLinkedin} />} >@matheusdsouza</Button>
+                <Button varitn="ghost" color={useColorModeValue('#1A202C', '#556B2F')} bg="none" leftIcon={<Icon as={IoLogoLinkedin} />} >@matheusdsouza</Button>
               </Link>
             </ListItem>
           </List>
