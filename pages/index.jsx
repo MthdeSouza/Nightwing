@@ -60,9 +60,9 @@ const Page = () => {
           </Paragraph>
           <Box align="center" my={4}>
 
-            <Link as={NextLink}>
-              <Button rightIcon={<ChevronRightIcon />} bg={useColorModeValue('#F5F5DC', '#556B2F')}>
-                My Portfolio
+            <Link as={NextLink} href="https://www.linkedin.com/in/matheusdsouza/">
+              <Button rightIcon={<ChevronRightIcon />} bg={useColorModeValue('#F5F5DC', '#556B2F')} >
+                My LinkedIn
               </Button>
             </Link>
           </Box>
