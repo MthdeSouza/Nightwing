@@ -85,7 +85,7 @@ const Page = () => {
             I ♥
           </Heading>
           <Paragraph>
-            Art, Music, Photography, Artificial Intelligence, Soccer and Playing video games and.
+            Art, Music, Photography, Artificial Intelligence, Playing Soccer and video games.
           </Paragraph>
         </Section>
 
