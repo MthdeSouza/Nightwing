@@ -22,7 +22,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   const isActive = path === href
 
   const activeBg = useColorModeValue('#F5F5DC', '#556B2F');
-  const inactiveColor = useColorModeValue('#202023', 'whiteAlpha.900');
+  const labelColor = useColorModeValue('#202023', 'whiteAlpha.900');
 
   return (
     <Link
@@ -30,7 +30,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       href={href}
       p={2}
       bg={isActive ? activeBg : undefined}
-      color={isActive ? undefined : inactiveColor}
+      color={labelColor}
       target={target}
       scroll
       {...props}
