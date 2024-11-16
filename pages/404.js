@@ -1,4 +1,4 @@
-import { Link as NextLink } from "next/link";
+import NextLink from "next/link";
 
 import {
   Box,

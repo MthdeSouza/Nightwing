@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import Logo from './logo'
-import { Link as NextLink } from 'next/link'
+import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -19,15 +19,18 @@ import ThemeToggleButton from './theme-toggle-button'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
-  const active = path === href
+  const isActive = path === href
+
+  const activeBg = useColorModeValue('#F5F5DC', '#556B2F');
+  const inactiveColor = useColorModeValue('#202023', 'whiteAlpha.900');
 
   return (
     <Link
       as={NextLink}
       href={href}
       p={2}
-      bg={active ? useColorModeValue('#F5F5DC', '#556B2F') : undefined}
-      color={useColorModeValue('#202023', 'whiteAlpha.900')}
+      bg={isActive ? activeBg : undefined}
+      color={isActive ? undefined : inactiveColor}
       target={target}
       scroll
       {...props}
@@ -81,6 +84,9 @@ const NavBar = props => {
           <LinkItem href="/contact" path={path}>
             Contact
           </LinkItem>
+          <LinkItem href="/posts" path={path}>
+            Posts
+          </LinkItem>
           <LinkItem href="https://github.com/MthdeSouza/Nightwing" path={path}>
             Source
           </LinkItem>
@@ -102,6 +108,9 @@ const NavBar = props => {
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/contact">
                   Contact
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/posts">
+                  Posts
                 </MenuItem>
                 <MenuItem>
                   <LinkItem href="https://github.com/MthdeSouza/Nightwing" path={path} p={0}>
