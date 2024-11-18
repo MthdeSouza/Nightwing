@@ -16,8 +16,10 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.8.1",
+    "@contentful/rich-text-react-renderer": "^16.0.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "contentful": "^11.2.1",
     "framer-motion": "^11.11.10",
     "next": "^15.0.2",
     "nodemailer": "^6.9.16",
