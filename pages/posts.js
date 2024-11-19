@@ -1,11 +1,51 @@
-import { Container, Heading, Divider, Text, Card, CardHeader, CardBody, Box, SimpleGrid, CardFooter, Button, Spinner } from '@chakra-ui/react';
+import { Container, Heading, Divider, Text, Card, CardHeader, CardBody, Box, SimpleGrid, CardFooter, Button, Spinner, Link } from '@chakra-ui/react';
 import Layout from '../components/layouts/article';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useState, useEffect } from 'react'
 import { loadPosts } from '../lib/load-posts';
 import { useColorModeValue } from '@chakra-ui/react';
+import NextLink from 'next/link'
 
-const Posts = () => {
+
+export async function getServerSideProps(context) {
+  console.log(context)
+  return {
+    props: { message: `test getServerSideProps return` },
+  }
+}
+
+const CardItem = ({ post }) => {
+  const cardBg = useColorModeValue('#F5F5DC', '#556B2F');
+  const buttonBorder = useColorModeValue('black 1px solid', 'white 1px solid');
+  const buttonBg = useColorModeValue('var(--chakra-colors-whiteAlpha-200)', null);
+
+  return (
+    <Card key={post.id} bg={cardBg}>
+      <CardHeader>
+        <Heading size="md">{post.titulo}</Heading>
+      </CardHeader>
+      <CardBody>
+        <Text>{documentToReactComponents(post.conteudo)}"(link abaixo em desenvolvimento)"</Text>
+      </CardBody>
+      <CardFooter>
+        <Link
+          as={NextLink}
+          href={`/post/${post.slug}`}
+          p={2}
+        >
+          <Button
+            border={buttonBorder}
+            bg={buttonBg}
+          >Leia mais</Button>
+        </Link>
+      </CardFooter>
+    </Card>
+  )
+}
+
+
+const Posts = (props) => {
+  console.log("props", props)
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -17,9 +57,6 @@ const Posts = () => {
     fetchPosts()
   }, [])
 
-  const cardBg = useColorModeValue('#F5F5DC', '#556B2F');
-  const buttonBorder = useColorModeValue('black 1px solid', 'white 1px solid');
-  const buttonBg = useColorModeValue('var(--chakra-colors-whiteAlpha-200)', null);
 
   return (
     <Layout title="Posts">
@@ -34,20 +71,7 @@ const Posts = () => {
             :
             <SimpleGrid spacing={4} templateColumns="repeat(auto-fill, minmax(200px, 1fr))">
               {posts.map((post) => (
-                <Card key={post.id} bg={cardBg}>
-                  <CardHeader>
-                    <Heading size="md">{post.titulo}</Heading>
-                  </CardHeader>
-                  <CardBody>
-                    <Text>{documentToReactComponents(post.conteudo)}"(link abaixo em desenvolvimento)"</Text>
-                  </CardBody>
-                  <CardFooter>
-                    <Button href={`/blog/${post.slug}`}
-                      border={buttonBorder}
-                      bg={buttonBg}
-                    >Leia mais</Button>
-                  </CardFooter>
-                </Card>
+                <CardItem post={post} key={post.id} />
               ))}
             </SimpleGrid>
           }
@@ -57,6 +81,5 @@ const Posts = () => {
     </Layout>
   );
 };
-
 
 export default Posts;
