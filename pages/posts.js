@@ -11,8 +11,6 @@ const CardItem = ({ post }) => {
   const buttonBorder = useColorModeValue('black 1px solid', 'white 1px solid');
   const buttonBg = useColorModeValue('var(--chakra-colors-whiteAlpha-200)', null);
 
-
-  console.log("post", post)
   return (
     <Card key={post.id} bg={cardBg}>
       <CardHeader>

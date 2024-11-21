@@ -5,7 +5,6 @@ import Paragraph from '../paragraph'
 import { Heading, Box } from '@chakra-ui/react'
 const PostHeader = ({ post, date }) => {
   const { title, coverImage, author, excerpt } = post.fields
-  console.log("post.fields", post.fields)
   return (
     <>
       <Box mb={6}>
