@@ -1,42 +1,44 @@
 import { Container, Heading, Divider, Text, Card, CardHeader, CardBody, Box, SimpleGrid, CardFooter, Button, Spinner, Link } from '@chakra-ui/react';
 import Layout from '../components/layouts/article';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useState, useEffect } from 'react'
 import { loadPosts } from '../lib/load-posts';
 import { useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link'
-
-
-export async function getServerSideProps(context) {
-  console.log(context)
-  return {
-    props: { message: `test getServerSideProps return` },
-  }
-}
+import ContentfulImage from '../components/ui/ContentfulImage';
 
 const CardItem = ({ post }) => {
   const cardBg = useColorModeValue('#F5F5DC', '#556B2F');
   const buttonBorder = useColorModeValue('black 1px solid', 'white 1px solid');
   const buttonBg = useColorModeValue('var(--chakra-colors-whiteAlpha-200)', null);
 
+
+  console.log("post", post)
   return (
     <Card key={post.id} bg={cardBg}>
       <CardHeader>
-        <Heading size="md">{post.titulo}</Heading>
+        <Heading size="md">{post.fields.title}</Heading>
       </CardHeader>
+      <Box mb={6} >
+        <ContentfulImage
+          alt={`Cover Image for ${post.fields.title}`}
+          src={post.fields.coverImage?.fields.file.url}
+          width={post.fields.coverImage?.fields.file.details.image.width}
+          height={post.fields.coverImage?.fields.file.details.image.height}
+        />
+      </Box>
       <CardBody>
-        <Text>{documentToReactComponents(post.conteudo)}"(link abaixo em desenvolvimento)"</Text>
+        <Text>{(post.fields.excerpt).substring(0, 155)}...</Text>
       </CardBody>
       <CardFooter>
         <Link
           as={NextLink}
-          href={`/post/${post.slug}`}
+          href={`/post/${post.fields.slug}`}
           p={2}
         >
           <Button
             border={buttonBorder}
             bg={buttonBg}
-          >Leia mais</Button>
+          >Read More</Button>
         </Link>
       </CardFooter>
     </Card>
@@ -44,8 +46,7 @@ const CardItem = ({ post }) => {
 }
 
 
-const Posts = (props) => {
-  console.log("props", props)
+const Posts = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
