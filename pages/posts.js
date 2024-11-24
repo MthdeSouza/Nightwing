@@ -16,7 +16,7 @@ const CardItem = ({ post }) => {
       <CardHeader>
         <Heading size="md">{post.fields.title}</Heading>
       </CardHeader>
-      <Box mb={6} >
+      <Box mb={6} pl={6} pr={6}>
         <ContentfulImage
           alt={`Cover Image for ${post.fields.title}`}
           src={post.fields.coverImage?.fields.file.url}

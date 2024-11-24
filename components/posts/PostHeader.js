@@ -18,7 +18,7 @@ const PostHeader = ({ post, date }) => {
       <Box mb={6} >
         <Paragraph>{excerpt}</Paragraph>
       </Box>
-      <Box mb={6} >
+      <Box mb={6} pl={12} pr={12}>
         <ContentfulImage
           alt={`Cover Image for ${title}`}
           src={coverImage?.fields.file.url}
