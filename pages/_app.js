@@ -13,11 +13,9 @@ const Website = ({ Component, PageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
-      <Layout router={router}>
-        <AnimatePresence mode='wait' initial={true}>
-          <Component {...PageProps} key={router.route} />
-        </AnimatePresence>
-      </Layout>
+      <AnimatePresence mode='wait' initial={true}>
+        <Component {...PageProps} key={router.route} />
+      </AnimatePresence>
     </ChakraProvider>
   )
 }

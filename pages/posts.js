@@ -1,5 +1,5 @@
 import { Container, Heading, Divider, Text, Card, CardHeader, CardBody, Box, SimpleGrid, CardFooter, Button, Spinner, Link } from '@chakra-ui/react';
-import Layout from '../components/layouts/article';
+import Layout from '../components/layouts/main'
 import { useState, useEffect } from 'react'
 import { loadPosts } from '../lib/load-posts';
 import { useColorModeValue } from '@chakra-ui/react';

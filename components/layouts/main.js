@@ -4,25 +4,37 @@ import { Box, Container } from '@chakra-ui/react'
 import NavBar from '../navbar'
 import VoxelDogLoader from '../voxel-dog-loader'
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import { gtmInjection } from '../../lib/gtm'
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+  gtmId: 'GTM-JM0V6XL9ZT',
+};
 
 const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
   ssr: false,
   loading: () => <VoxelDogLoader />
 })
 
-const Main = ({ children, router }) => {
+const Main = ({ title, children }) => {
   const [voxelDog, setVoxelDog] = React.useState(null)
+  const router = useRouter();
 
   React.useEffect(() => {
+    TagManager.initialize(tagManagerArgs);
     setVoxelDog(<LazyVoxelDog />)
   }, [])
+
+  const headerTitle = `${title} - Matheus Souza`
 
   return (
     <Box as="main" pb={8}>
       <Head>
         <link rel="icon" href="/tree.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Home - Matheus Souza</title>
+        <title>{headerTitle}</title>
+        <div dangerouslySetInnerHTML={{ __html: gtmInjection }} />
       </Head>
 
       <NavBar path={router.asPath} />

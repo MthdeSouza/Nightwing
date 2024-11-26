@@ -1,5 +1,5 @@
 import { Container, Heading, Divider, Text, Input, HStack, FormLabel, FormControl, Textarea, Box, Button, Alert } from '@chakra-ui/react'
-import Layout from '../components/layouts/article'
+import Layout from '../components/layouts/main'
 import { useColorModeValue } from '@chakra-ui/react'
 import { useState } from 'react'
 

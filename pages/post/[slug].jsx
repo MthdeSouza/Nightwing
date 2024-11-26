@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import PostHeader from "../../components/posts/PostHeader";
 import PostBody from "../../components/posts/PostBody";
 import { Spinner, Box } from "@chakra-ui/react";
+import Layout from '../../components/layouts/main'
 
 const Post = () => {
   const router = useRouter();
@@ -26,20 +27,22 @@ const Post = () => {
   if (!post) return null
 
   return (
-    <section className='section'>
-      <div className='container'>
-        <article className='prose mx-auto'>
-          {router.isFallback ? (
-            <Box justifySelf="center"><Spinner /></Box>
-          ) : (
-            <>
-              <PostHeader post={post} date={post.sys?.createdAt} />
-              <PostBody post={post} />
-            </>
-          )}
-        </article>
-      </div>
-    </section>
+    <Layout title={post.fields.title}>
+      <section className='section'>
+        <div className='container'>
+          <article className='prose mx-auto'>
+            {router.isFallback ? (
+              <Box justifySelf="center"><Spinner /></Box>
+            ) : (
+              <>
+                <PostHeader post={post} date={post.sys?.createdAt} />
+                <PostBody post={post} />
+              </>
+            )}
+          </article>
+        </div>
+      </section>
+    </Layout>
   )
 }
 

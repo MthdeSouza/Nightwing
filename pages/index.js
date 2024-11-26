@@ -8,19 +8,11 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
 import timelapse from '../components/utils/timelapse.json'
-import Layout from '../components/layouts/article'
-import TagManager from 'react-gtm-module';
-
-const tagManagerArgs = {
-  gtmId: 'GTM-JM0V6XL9ZT', // Substitua pelo seu GTM ID
-};
+import Layout from '../components/layouts/main'
 
 const Page = () => {
-  if (process.browser) {
-    TagManager.initialize(tagManagerArgs);
-  }
   return (
-    <Layout>
+    <Layout title="Home">
       <Container>
         <Box borderRadius="lg" bg={useColorModeValue("#ffffff40", "#ffffff10")} p={3} mb={6} align="center" mt={2}>
           Hello, I'm an front-end developer based in Campinas!
