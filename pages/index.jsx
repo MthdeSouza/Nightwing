@@ -1,17 +1,24 @@
-import { Icon, Container, Box, Heading, Image, List, ListItem, SimpleGrid } from '@chakra-ui/react'
+import { Icon, Container, Box, Heading, Image, List, ListItem } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { Link as NextLink } from 'next/link'
 import { Link, Button } from '@chakra-ui/react'
-import { CheckCircleIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
 import timelapse from '../components/utils/timelapse.json'
-import { GridItem } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
-const Page = () => {
+import TagManager from 'react-gtm-module';
 
+const tagManagerArgs = {
+  gtmId: 'GTM-JM0V6XL9ZT', // Substitua pelo seu GTM ID
+};
+
+const Page = () => {
+  if (process.browser) {
+    TagManager.initialize(tagManagerArgs);
+  }
   return (
     <Layout>
       <Container>
@@ -53,10 +60,6 @@ const Page = () => {
           </Heading>
           <Paragraph>
             I am a skilled Front-end Developer with over five years of experience in diverse industries, including e-commerce and cloud computing. My work focuses on delivering high-quality, scalable web solutions with an emphasis on accessibility, design systems, and responsive UX/UI. With a solid foundation in both front-end and back-end development and an MBA in Front-end Development, I am dedicated to building efficient user experiences and continually enhancing my expertise in the tech field.
-            {/* <Link as={NextLink} href="/works/inkdrop" passHref scroll={false}>
-            Inkdrop
-          </Link>
-          . */}
           </Paragraph>
           <Box align="center" my={4}>
 
