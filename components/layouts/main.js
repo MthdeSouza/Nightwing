@@ -35,6 +35,17 @@ const Main = ({ title, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{headerTitle}</title>
         <div dangerouslySetInnerHTML={{ __html: gtmInjection }} />
+        <div dangerouslySetInnerHTML={{
+          __html: `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JM0V6XL9ZT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JM0V6XL9ZT');
+</script>` }} />
+
       </Head>
 
       <NavBar path={router.asPath} />
