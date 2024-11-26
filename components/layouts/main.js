@@ -9,7 +9,7 @@ import { gtmInjection } from '../../lib/gtm'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-  gtmId: 'GTM-JM0V6XL9ZT',
+  gtmId: 'GTM-PN274Z4X',
 };
 
 const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
