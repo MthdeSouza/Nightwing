@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
-import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import { DogContainer, DogSpinner } from './voxel-dog-loader'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -49,7 +49,7 @@ const VoxelDog = () => {
         20 * Math.cos(0.2 * Math.PI)
       )
 
-      const scale = scH * 0.005 + 3.4
+      const scale = scH * 0.008 + 3.4
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
