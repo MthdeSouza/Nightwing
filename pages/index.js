@@ -63,14 +63,26 @@ const Page = () => {
             Work
           </Heading>
           <Paragraph>
-            I am a skilled Front-end Developer with over five years of
-            experience in diverse industries, including e-commerce and cloud
-            computing. My work focuses on delivering high-quality, scalable web
-            solutions with an emphasis on accessibility, design systems, and
-            responsive UX/UI. With a solid foundation in both front-end and
-            back-end development and an MBA in Front-end Development, I am
-            dedicated to building efficient user experiences and continually
-            enhancing my expertise in the tech field.
+            I'm a Front-end Engineer with over five years of experience building
+            web applications across different industries, including e-commerce
+            and cloud computing. My work goes beyond writing code — I enjoy
+            exploring technical solutions, contributing to architectural
+            decisions, and turning complex business requirements into scalable,
+            intuitive, and accessible user experiences.
+          </Paragraph>
+
+          <Paragraph>
+            Currently at C&A, I contribute to the development of enterprise
+            applications and data-driven tools that support large-scale retail
+            operations. I'm passionate about software engineering, frontend
+            architecture, design systems, and emerging technologies, always
+            looking for opportunities to learn, experiment, and build meaningful
+            solutions.
+          </Paragraph>
+
+          <Paragraph>
+            I also hold an MBA in Front-end Development and enjoy exploring new
+            ideas through personal projects and technology.
           </Paragraph>
           <Box align="center" my={4}>
             <Link
@@ -104,8 +116,12 @@ const Page = () => {
             I ♥
           </Heading>
           <Paragraph>
-            Art, Music, Photography, Artificial Intelligence, Playing Soccer and
-            video games.
+            Progressive instrumental rock and video game soundtracks while
+            working, pagode with family, and metalcore, J-rock and rap when
+            listening on my own. I'm also into street photography, a lifelong
+            Corinthians supporter, and games like Dota 2, Balatro, Inscryption
+            and Final Fantasy XII. Always curious about AI and emerging
+            technologies.
           </Paragraph>
         </Section>
 
